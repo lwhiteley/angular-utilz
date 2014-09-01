@@ -1,5 +1,5 @@
 /**
- * angular-utilz v0.0.13
+ * angular-utilz v0.0.14
  *
  * utility functions as a service for angular
  *
@@ -10,10 +10,10 @@
 
 angular.module('uo.utilz', []).value('CoreUtilz', (function(){
   /**
-     * Trims whitespace at the beginning and/or end of a string
-     * @param value - string to be trimmed
-     * @returns {String} - returns an empty string if the value passed is not of type {String}
-     */
+   * Trims whitespace at the beginning and/or end of a string
+   * @param value - string to be trimmed
+   * @returns {String} - returns an empty string if the value passed is not of type {String}
+   */
     var trimString = function (value) {
         if (itypeof(value) === 'string') {
             return value.replace(/^\s*/, '').replace(/\s*$/, '');
@@ -45,8 +45,9 @@ angular.module('uo.utilz', []).value('CoreUtilz', (function(){
 
     /**
      * checks if @param1 is a substring of @param2
-     * @param sub
-     * @param full
+     * @param sub - substring to be evaluated
+     * @param full - full string to check against
+     * @returns {Boolean} result
      **/
     var isSubString = function (sub, full) {
         if (itypeof(sub) === 'string' && itypeof(full) === 'string') {

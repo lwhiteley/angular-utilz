@@ -102,7 +102,8 @@ module.exports = function(grunt){
         options: {
             coverage_dir: 'reports/coverage'
         }
-    }
+    },
+    
   });
 
   require('load-grunt-tasks')(grunt);
