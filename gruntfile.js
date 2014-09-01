@@ -102,6 +102,6 @@ module.exports = function(grunt){
   grunt.registerTask('release:patch', ['bump:patch', 'release:base']);
   grunt.registerTask('release:minor', ['bump:minor', 'release:base']);
   grunt.registerTask('release:major', ['bump:major', 'release:base']);
-  grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify', 'release:patch']);
+  grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify']);
   grunt.registerTask('default', ['build']);
 };
