@@ -101,5 +101,5 @@ module.exports = function(grunt){
   grunt.registerTask('release', ['gta:add', 'gta:commit', 'gta:tag', 'gta:push']);
 
   grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify','bump:prerelease']);
-  grunt.registerTask('default', ['build']);
+  grunt.registerTask('default', ['test']);
 };
