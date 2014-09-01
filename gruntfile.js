@@ -28,14 +28,14 @@ module.exports = function(grunt){
       },
       module:{
           src: [
-                  'src/header.js',
+                  'src/header.prefix',
                   'src/angular-utilz.js'
                ],
           dest: 'dist/angular-utilz.js'
       },
       minify:{
           src: [
-                  'src/header.js',
+                  'src/header.prefix',
                   'dist/angular-utilz.min.js'
                ],
           dest: 'dist/angular-utilz.min.js'
@@ -103,12 +103,19 @@ module.exports = function(grunt){
             coverage_dir: 'reports/coverage'
         }
     },
-    
+    jshint: {
+			all: {
+				src: ['src/*.js'],
+				options: {
+					jshintrc: true
+				}
+			}
+		},
   });
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('test', ['karma:unit']);
+  grunt.registerTask('test', ['jshint','karma:unit']);
   grunt.registerTask('release', ['concat:module','concat:minify','gta:add', 'gta:commit', 'gta:tag', 'gta:push',  'gta:pushTags']);
   grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify','bump:prerelease']);
   grunt.registerTask('default', ['test', 'coveralls']);
