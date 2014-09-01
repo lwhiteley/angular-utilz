@@ -92,7 +92,11 @@ module.exports = function(grunt){
             }
         }
     },
-
+    coveralls: {
+        options: {
+            coverage_dir: 'reports/coverage'
+        }
+    }
   });
 
   require('load-grunt-tasks')(grunt);
@@ -100,5 +104,5 @@ module.exports = function(grunt){
   grunt.registerTask('test', ['karma:unit']);
   grunt.registerTask('release', ['gta:add', 'gta:commit', 'gta:tag', 'gta:push']);
   grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify','bump:prerelease']);
-  grunt.registerTask('default', ['test']);
+  grunt.registerTask('default', ['test', 'coveralls']);
 };
