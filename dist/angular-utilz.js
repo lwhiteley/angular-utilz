@@ -1,5 +1,5 @@
 /**
- * angular-utilz v0.0.10-0
+ * angular-utilz v0.0.13
  *
  * utility functions as a service for angular
  *

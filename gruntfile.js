@@ -108,7 +108,7 @@ module.exports = function(grunt){
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('test', ['karma:unit']);
-  grunt.registerTask('release', ['gta:add', 'gta:commit', 'gta:tag', 'gta:push',  'gta:pushTags']);
+  grunt.registerTask('release', ['concat:module','concat:minify','gta:add', 'gta:commit', 'gta:tag', 'gta:push',  'gta:pushTags']);
   grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify','bump:prerelease']);
   grunt.registerTask('default', ['test', 'coveralls']);
 };
