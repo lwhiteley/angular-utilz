@@ -35,7 +35,6 @@
 		"inject",
 		"expect"
 	],
-	"indent": 4,
 	"devel": true,
 	"noempty": true
 }

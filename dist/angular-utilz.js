@@ -1,5 +1,5 @@
 /**
- * angular-utilz v0.0.14
+ * angular-utilz v0.0.15
  *
  * utility functions as a service for angular
  *
@@ -8,12 +8,13 @@
  * License: MIT
  */
 
+'use strict';
 angular.module('uo.utilz', []).value('CoreUtilz', (function(){
-  /**
-   * Trims whitespace at the beginning and/or end of a string
-   * @param value - string to be trimmed
-   * @returns {String} - returns an empty string if the value passed is not of type {String}
-   */
+    /**
+     * Trims whitespace at the beginning and/or end of a string
+     * @param value - string to be trimmed
+     * @returns {String} - returns an empty string if the value passed is not of type {String}
+     */
     var trimString = function (value) {
         if (itypeof(value) === 'string') {
             return value.replace(/^\s*/, '').replace(/\s*$/, '');
@@ -110,36 +111,36 @@ angular.module('uo.utilz', []).value('CoreUtilz', (function(){
     * @param value
     * @returns {*}
     */
-   var getWholeNumber = function(value){
-       if(angular.isNumber(value)){
+    var getWholeNumber = function(value){
+        if(angular.isNumber(value)){
            return Math.floor(value) ;
-       }
-       return value;
-   };
+        }
+        return value;
+    };
 
-   /**
-    * this method evaluates a number to check if it is a whole number
-    * @param value
-    * @returns {*}
-    */
-   var isWholeNumber = function(value){
-       if(angular.isNumber(value)){
-           return value % 1 === 0;
-       }
-       return false;
-   };
+     /**
+      * this method evaluates a number to check if it is a whole number
+      * @param value
+      * @returns {*}
+      */
+     var isWholeNumber = function(value){
+         if(angular.isNumber(value)){
+             return value % 1 === 0;
+         }
+         return false;
+     };
 
-   /**
-    * this method evaluates a number to check if it is a counting number
-    * @param value
-    * @returns {*}
-    */
-   var isCountingNumber = function(value){
-       if(angular.isNumber(value)){
-           return getWholeNumber(value) > 0 && isWholeNumber(value);
-       }
-       return false;
-   };
+     /**
+      * this method evaluates a number to check if it is a counting number
+      * @param value
+      * @returns {*}
+      */
+     var isCountingNumber = function(value){
+         if(angular.isNumber(value)){
+             return getWholeNumber(value) > 0 && isWholeNumber(value);
+         }
+         return false;
+     };
 
     var utilz = {
       supplant: supplant,
