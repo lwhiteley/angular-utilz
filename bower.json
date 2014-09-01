@@ -1,6 +1,6 @@
 {
   "name": "angular-utilz",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "homepage": "https://github.com/lwhiteley/angular-utilz",
   "authors": [
     "Layton Whiteley <layton.whiteley@gmail.com>"
@@ -20,7 +20,6 @@
     "config",
     "libs",
     "test",
-    "sample_app",
     "DEVELOP.md",
     "CHANGELOG.md",
     "gruntfile.js",
@@ -28,6 +27,7 @@
     "composer.json",
     "package.json",
     "src",
+    "reports",
     "coverage",
     ".*"
   ],

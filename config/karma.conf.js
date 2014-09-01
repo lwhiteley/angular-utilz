@@ -1,4 +1,4 @@
-var util = require('./.grunt/utils');
+var util = require('./grunt/utils');
 
 module.exports = function (config) {
     config.set({
