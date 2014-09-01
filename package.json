@@ -1,0 +1,42 @@
+{
+  "name": "angular-utilz",
+  "version": "1.0.0",
+  "description": "utility functions as a service for angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test",
+    "postinstall": "bower install --config.interactive=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lwhiteley/angular-utilz.git"
+  },
+  "keywords": [
+    "service",
+    "angular",
+    "utilz",
+    "utility"
+  ],
+  "author": "Layton Whiteley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lwhiteley/angular-utilz/issues"
+  },
+  "homepage": "https://github.com/lwhiteley/angular-utilz",
+  "devDependencies": {
+    "bower": "^1.3.9",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-jsonlint": "*",
+    "grunt-karma": "^0.8.3",
+    "grunt-karma-coveralls": "*",
+    "karma-coverage": "*",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "~0.1.2",
+    "load-grunt-tasks": "~0.6.0",
+    "shelljs": "*"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "angular-utilz",
+  "version": "0.0.0",
+  "homepage": "https://github.com/lwhiteley/angular-utilz",
+  "authors": [
+    "Layton Whiteley <layton.whiteley@gmail.com>"
+  ],
+  "description": "utility functions for angular as a service",
+  "main": "dist/angular-utilz.js",
+  "keywords": [
+    "utilz",
+    "angular",
+    "service"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "_*",
+    "node_modules",
+    "config",
+    "libs",
+    "test",
+    "sample_app",
+    "DEVELOP.md",
+    "CHANGELOG.md",
+    "gruntfile.js",
+    "browserstack.json",
+    "composer.json",
+    "package.json",
+    "src",
+    "coverage",
+    ".*"
+  ],
+  "devDependencies": {
+    "angular": "~1.2",
+    "angular-mocks": "~1.2.23"
+  }
+}
