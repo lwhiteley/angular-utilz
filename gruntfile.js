@@ -85,8 +85,14 @@ module.exports = function(grunt){
                 stdout: true
             }
         },
-        push: {
+        pushTags: {
             command:('push --tags ' ),
+            options: {
+                stdout: true
+            }
+        },
+        push: {
+            command:('push ' ),
             options: {
                 stdout: true
             }
@@ -102,7 +108,7 @@ module.exports = function(grunt){
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('test', ['karma:unit']);
-  grunt.registerTask('release', ['gta:add', 'gta:commit', 'gta:tag', 'gta:push']);
+  grunt.registerTask('release', ['gta:add', 'gta:commit', 'gta:tag', 'gta:push',  'gta:pushTags']);
   grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify','bump:prerelease']);
   grunt.registerTask('default', ['test', 'coveralls']);
 };
