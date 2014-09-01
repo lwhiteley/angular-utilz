@@ -98,15 +98,7 @@ module.exports = function(grunt){
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('test', ['karma:unit']);
-  grunt.registerTask('release:base', ['gta:add', 'gta:commit', 'gta:tag', 'gta:push']);
-  // grunt.registerTask('release:patch', ['bump:patch', 'release:base']);
-  // grunt.registerTask('release:minor', ['bump:minor', 'release:base']);
-  // grunt.registerTask('release:major', ['bump:major', 'release:base']);
-  grunt.task.registerTask('release', 'release patch', function(arg1, arg2) {
-    grunt.task.run('bump:patch');
-    APP_VERSION = util.getVersion();
-    grunt.task.run('release:base');
-  });
+  grunt.registerTask('release', ['gta:add', 'gta:commit', 'gta:tag', 'gta:push']);
 
   grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify','bump:prerelease']);
   grunt.registerTask('default', ['build']);
