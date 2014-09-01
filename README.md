@@ -12,7 +12,7 @@ utility functions as a service for angular
 
 ### Integrate
 ```html
- <script src="bower_compoenets/dist/angular-utilz.js" />
+ <script src="bower_components/dist/angular-utilz.js" />
 ```
 
 eg.
