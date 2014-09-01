@@ -1,10 +1,10 @@
 /**
- * angular-utilz v0.1.0
+ * angular-utilz v0.0.8
  *
  * utility functions as a service for angular
  *
  * @contributor Layton Whiteley
- * (c) 2013 https://github.com/lwhiteley/angular-utilz
+ * (c) 2014 https://github.com/lwhiteley/angular-utilz
  * License: MIT
  */
 

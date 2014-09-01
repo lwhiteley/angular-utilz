@@ -55,16 +55,42 @@ module.exports = function(grunt){
       options: {
         files: ['package.json', 'bower.json'],
         updateConfigs: [],
-        commit: true,
+        commit: false,
         commitMessage: 'Release v%VERSION%',
         commitFiles: ['package.json'],
         createTag: false,
         tagName: '%VERSION%',
         tagMessage: 'Version %VERSION%',
-        push: true,
-        pushTo: 'upstream',
+        push: false,
+        pushTo: APP_VERSION.website,
         gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
       }
+    },
+    gta: {
+        add: {
+            command: 'add -A .',
+            options: {
+                stdout: true
+            }
+        },
+        commit: {
+            command: 'commit -am "Release version '+ APP_VERSION.full +' "',
+            options: {
+                stdout: true
+            }
+        },
+        tag: {
+            command:('tag ' + APP_VERSION.full),
+            options: {
+                stdout: true
+            }
+        },
+        push: {
+            command:('push --tags ' ),
+            options: {
+                stdout: true
+            }
+        }
     },
 
   });
@@ -72,6 +98,10 @@ module.exports = function(grunt){
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('test', ['karma:unit']);
-  grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify']);
-  grunt.registerTask('default', ['test']);
+  grunt.registerTask('release:base', ['gta:add', 'gta:commit', 'gta:tag', 'gta:push']);
+  grunt.registerTask('release:patch', ['bump:patch', 'release:base']);
+  grunt.registerTask('release:minor', ['bump:minor', 'release:base']);
+  grunt.registerTask('release:major', ['bump:major', 'release:base']);
+  grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify', 'release:patch']);
+  grunt.registerTask('default', ['build']);
 };
