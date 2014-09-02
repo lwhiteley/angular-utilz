@@ -123,10 +123,10 @@ module.exports = function(grunt){
   });
   grunt.registerTask('test', ['jshint','karma:unit']);
 
-  grunt.registerTask('release:base', ['dist','gta:add', 'gta:commit', 'gta:tag', 'gta:push',  'gta:pushTags']);
-  grunt.registerTask('release', ['bump:patch','release:base']);
-  grunt.registerTask('release:minor', ['bump:minor','release:base']);
-  grunt.registerTask('release:major', ['bump:major','release:base']);
+  grunt.registerTask('release', ['dist','gta:add', 'gta:commit', 'gta:tag', 'gta:push',  'gta:pushTags']);
+  // grunt.registerTask('release', ['bump:patch','release:base']);
+  // grunt.registerTask('release:minor', ['bump:minor','release:base']);
+  // grunt.registerTask('release:major', ['bump:major','release:base']);
 
   grunt.registerTask('build', [ 'test','bump:prerelease', 'dist']);
   grunt.registerTask('dist', ['loadVersion', 'clean:dist','concat:module', 'uglify:module', 'concat:minify',]);
