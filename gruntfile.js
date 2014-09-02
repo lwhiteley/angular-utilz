@@ -111,12 +111,24 @@ module.exports = function(grunt){
 				}
 			}
 		},
+    clean:{
+      dist:['dist']
+    }
   });
 
   require('load-grunt-tasks')(grunt);
 
+  grunt.task.registerTask('loadVersion', 'A sample task that logs stuff.', function(arg1, arg2) {
+    APP_VERSION = util.getVersion();
+  });
   grunt.registerTask('test', ['jshint','karma:unit']);
-  grunt.registerTask('release', ['concat:module','concat:minify','gta:add', 'gta:commit', 'gta:tag', 'gta:push',  'gta:pushTags']);
-  grunt.registerTask('build', ['test', 'concat:module', 'uglify:module', 'concat:minify','bump:prerelease']);
+
+  grunt.registerTask('release', ['dist','gta:add', 'gta:commit', 'gta:tag', 'gta:push',  'gta:pushTags']);
+  // grunt.registerTask('release', ['bump:patch','release:base']);
+  // grunt.registerTask('release:minor', ['bump:minor','release:base']);
+  // grunt.registerTask('release:major', ['bump:major','release:base']);
+
+  grunt.registerTask('build', [ 'test','bump:prerelease', 'dist']);
+  grunt.registerTask('dist', ['loadVersion', 'clean:dist','concat:module', 'uglify:module', 'concat:minify',]);
   grunt.registerTask('default', ['test', 'coveralls']);
 };
