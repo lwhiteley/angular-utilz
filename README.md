@@ -25,7 +25,7 @@ eg.
  angular.module('app').controller('SampleCtrl', [
    'CoreUtilz',
    function(CoreUtilz){
-     var result = CoreUtilz.itypeof(/app\/tests/); // result = 'regex'
+     var result = CoreUtilz.itypeof(/app\/tests/); // result = 'regexp'
    }
  ]);
 ```
