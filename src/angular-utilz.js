@@ -1,5 +1,5 @@
 'use strict';
-angular.module('uo.utilz', []).value('CoreUtilz', (function(){
+angular.module('uo.utilz', []).constant('CoreUtilz', (function(){
     /**
      * Trims whitespace at the beginning and/or end of a string
      * @param value - string to be trimmed
