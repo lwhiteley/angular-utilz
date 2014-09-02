@@ -34,7 +34,7 @@ eg.
 ##### itypeof
 > The itypeof operator returns a string indicating the type of the unevaluated operand.
 > This is a more accurate evaluator than the `typeof` operator.
-> This will accurately detect regular expressions and give a type of `regex` instead of
+> This will accurately detect regular expressions and give a type of `regexp` instead of
 > `object`
 > - @param val {*}
 > - @returns {String} typeOfVal
