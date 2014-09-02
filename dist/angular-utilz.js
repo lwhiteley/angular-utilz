@@ -1,5 +1,5 @@
 /**
- * angular-utilz v0.0.16
+ * angular-utilz v0.0.17
  *
  * utility functions as a service for angular
  *
@@ -9,7 +9,7 @@
  */
 
 'use strict';
-angular.module('uo.utilz', []).value('CoreUtilz', (function(){
+angular.module('uo.utilz', []).constant('CoreUtilz', (function(){
     /**
      * Trims whitespace at the beginning and/or end of a string
      * @param value - string to be trimmed
