@@ -29,6 +29,10 @@ eg.
    }
  ]);
 ```
+#### More Info
+
+`CoreUtilz` was  designed to provide extended utility functions and can be injected in most/all angular components, including `provider` and `config`.
+
 ### API Methods
 
 ##### itypeof
