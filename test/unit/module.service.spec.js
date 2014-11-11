@@ -173,4 +173,34 @@ describe('util Services unit tests', function() {
         });
     });
 
+		describe('test getCommonArrayValues method: ', function(){
+			it('should return empty list if both inputs are not arrays', function() {
+	      expect(utilService.getCommonArrayValues(null, true).length).toBe(0);
+	      expect(utilService.getCommonArrayValues(2, 'true').length).toBe(0);
+	    });
+
+	    it('should return empty list if both inputs have no common value', function() {
+	      var arr1 = [null, 1, 3];
+	      var arr3 = [true, 2, 4];
+	      expect(utilService.getCommonArrayValues(arr1, arr3).length).toBe(0);
+	    });
+
+	    it('should return a list of common values when found', function() {
+	      var arr1 = [null, 1, 3, true];
+	      var arr3 = [true, 2, 4];
+	      var expected = [true]
+	      expect(utilService.getCommonArrayValues(arr1, arr3).length).toBe(1);
+	      expect(utilService.getCommonArrayValues(arr1, arr3)).toEqual(expected);
+	    });
+
+	    it('should return a list of common values when found - strings', function() {
+	      var arr1 = [null, 1, 3, 'true', 'user'];
+	      var arr3 = ['true', 2, 4, 'user'];
+	      var expected = ['true', 'user']
+	      expect(utilService.getCommonArrayValues(arr1, arr3).length).toBe(2);
+	      expect(utilService.getCommonArrayValues(arr1, arr3)).toEqual(expected);
+	    });
+
+		});
+
 });
