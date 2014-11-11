@@ -132,6 +132,27 @@ angular.module('uo.utilz', []).constant('CoreUtilz', (function(){
          return false;
      };
 
+     /**
+      * this method analyzes two arrays and returns an array with common values
+      * @param collection1
+      * @param collection2
+      * @returns {Array}
+      */
+     var getCommonArrayValues = function(collection1, collection2){
+      var ret = [];
+      if(angular.isArray(collection1) && angular.isArray(collection2)){
+        collection1.sort();
+        collection2.sort();
+        for(var i = 0; i < collection1.length; i += 1) {
+            if(collection2.indexOf( collection1[i] ) > -1){
+                ret.push( collection1[i] );
+            }
+        }
+      }
+      return ret;
+    };
+
+
     var utilz = {
       supplant: supplant,
       isSubString: isSubString,
@@ -140,7 +161,8 @@ angular.module('uo.utilz', []).constant('CoreUtilz', (function(){
       isValidString: isValidString,
       isWholeNumber: isWholeNumber,
       getWholeNumber: getWholeNumber,
-      isCountingNumber: isCountingNumber
+      isCountingNumber: isCountingNumber,
+      getCommonArrayValues: getCommonArrayValues
     };
 
     return utilz;
