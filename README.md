@@ -79,3 +79,20 @@ eg.
 > Trims whitespace at the beginning and/or end of a string
 * @param value - string to be trimmed
 * @returns {String} - returns an empty string if the value passed is not of type {String}
+
+### Development
+
+**Requirements**
+- Nodejs
+- Npm
+- Grunt (`npm install -g grunt-cli`)
+
+**To setup environment, run**
+```bash
+$ npm install
+```
+
+**To run tests, run**
+```bash
+$ grunt test
+```
